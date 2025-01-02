@@ -1,0 +1,128 @@
+#REVERSE WORD IN STRING
+s="ritik is a good boy"
+l=s.split()
+l=l[::-1]
+ans=' '.join(l)
+print(ans)
+
+-------------------------
+
+#REVERSE INTERNAL WORD IN STRING
+s="ritik is a good boy"
+l=s.split()
+l1=[]
+
+for i in l:
+    l1.append((i[::-1]))
+
+print(' '.join(l1))
+
+--------------------------
+
+#REVERSE EVERY second INTERNAL WORD IN STRING
+s="one two three four five six"
+l=s.split()
+l1=[]
+i=0
+while i< len(l):
+    if i%2==0:
+        l1.append(l[i])
+        
+    else:
+        l1.append(l[i][::-1])
+    i+=1
+
+print(' '.join(l1))
+
+--------------------------------
+#WAP TO MERGE STRING ALTERNATIVE 
+
+s1="Ritika"
+s2="Sharma"
+
+i=0
+j=0
+output=' '
+while i<len(s1) or j<len(s2):
+    if i<len(s1):
+        output+=s1[i]
+        i+=1
+    if j<len(s2):
+        output+=s2[j]
+        j+=1
+print(output)
+
+-------------------------------
+# WAP TO SORT ALPHA AND DIGIT 
+#OUTPUT-ABD134
+s="B4A1D3"
+alpha=[]
+digit=[]
+for i in s:
+    if i.isalpha():
+        alpha.append(i)
+    else:
+        digit.append(i)
+ans=sorted(alpha)+sorted(digit)
+print(''.join(ans))
+
+--------------------------------
+#WAP TO EXPAND THE STRING
+
+s="a4b3c2"
+# output-aaaabbbcc
+output=" "
+
+for i in s:
+    if i.isalpha():
+        x=i
+    else:
+        output+=x*int(i)
+print(output)
+
+--------------------------------
+#WAP TO COMPRESS THE STRING
+s="aaaabbbcc"
+# output-4a3b2c
+output=" "
+
+c=1
+i=1
+prev=s[0]
+while i<len(s):
+    if s[i]==prev:
+        c+=1
+    else:
+        output+=str(c)+prev
+        prev=s[i]
+        c=1
+    
+    if i==len(s)-1:
+        output+=str(c)+prev
+    
+    i+=1
+
+print(output)
+--------------------------------
+#WAP TO COMPRESS THE STRING
+s="aaaabbbcc"
+# output-a4b3c2
+output=" "
+
+c=1
+i=1
+prev=s[0]
+while i<len(s):
+    if s[i]==prev:
+        c+=1
+    else:
+        output+=prev+str(c)
+        prev=s[i]
+        c=1
+    
+    if i==len(s)-1:
+        output+=prev+str(c)
+    
+    i+=1
+
+print(output)
