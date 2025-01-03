@@ -139,3 +139,16 @@ for i in strings[1:]:
         if  not prefix:
             break
 print(prefix)
+-------------------------------------
+#OCCURENCE OF ALL THE SUBSTINRG
+s = "abcabca"
+substr = "abc"
+firstOccur = s.find(substr)
+
+if firstOccur == -1:
+    print("Substring not found")
+else:
+    # Loop through all occurrences
+    while firstOccur != -1:
+        print("{} present at index {}".format(substr, firstOccur))
+        firstOccur = s.find(substr, firstOccur + 1)  # Search after the current found index
