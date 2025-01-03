@@ -152,3 +152,21 @@ else:
     while firstOccur != -1:
         print("{} present at index {}".format(substr, firstOccur))
         firstOccur = s.find(substr, firstOccur + 1)  # Search after the current found index
+-----------------------------------------
+
+#FIRST UNIQUE CHARACTER IN STRNG
+s = "swiss"
+d=dict()
+d=d.fromkeys(s,0)
+flag=0
+for i in s:
+    d[i]+=1
+    
+for k,v in d.items():
+    if v==1:
+        print(k)
+        flag=1
+        break
+if flag ==0:
+    print(-1)
+-------------------------------------------
