@@ -192,3 +192,30 @@ def removeDuplicate(n, s):
             result += s[i]
     
     return result
+
+------------------------------------------------
+#MOVE ZERO AT THE END IN LIST
+# Function to move zeros to the end of the list
+def move_zero_to_end(lst):
+    # Create a new list to hold non-zero elements
+    non_zero_list = []
+    
+    # Iterate through the original list and add non-zero elements to non_zero_list
+    for num in lst:
+        if num != 0:
+            non_zero_list.append(num)
+    
+    # Calculate the number of zeros to append
+    zero_count = len(lst) - len(non_zero_list)
+    
+    # Append the zeros to the end of the non_zero_list
+    non_zero_list.extend([0] * zero_count)
+    
+    return non_zero_list
+
+# Input list
+input_list = [0, 1, 9, 0, 3, 0, 5]
+
+# Call the function and print the result
+print("List after moving zeros to the end:", move_zero_to_end(input_list))
+------------------------------------------------------------
